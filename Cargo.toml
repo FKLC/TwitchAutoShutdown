@@ -1,0 +1,16 @@
+[package]
+name = "twitch_auto_shutdown"
+version = "0.1.0"
+authors = ["Fatih Kilic <me@fklc.dev>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
